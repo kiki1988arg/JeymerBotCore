@@ -59,8 +59,10 @@ namespace JeymerBot.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
+            var res = await _Bl.Delete(id);
+            return Ok(res);
         }
     }
 }

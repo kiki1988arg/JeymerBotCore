@@ -14,7 +14,8 @@ namespace BL
         private readonly IDAO _DAO;
         public BlRequest(IDAO DAO) {
             _DAO = DAO;
-        }
+        } 
+
         public async Task<IEnumerable<RequestModel>> GetAll() {
             return await _DAO.GetAllAsync();
         }
@@ -27,8 +28,12 @@ namespace BL
             return await _DAO.Insert(req);
         }
 
-        public  Task<HttpResponseMessage> Update(RequestModel req) {
-            return  _DAO.Update(req);
+        public async Task<HttpResponseMessage> Update(RequestModel req) {
+            return await _DAO.Update(req);
+        }
+
+        public async Task<HttpResponseMessage> Delete(int number) {
+            return await _DAO.Delete(number);
         }
     }
 }

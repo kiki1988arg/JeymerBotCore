@@ -34,8 +34,11 @@ namespace DAO
             int status = await _context.SaveChangesAsync();
             return new HttpResponseMessage(HttpStatusCode.OK);         
         }
-        public Task<HttpResponseMessage> Delete(int id) {
-            throw new NotImplementedException();
+        public async Task<HttpResponseMessage> Delete(int id) {
+            var del = _context.RequestModel.FirstOrDefault(c => c.RequestId == id);
+            _context.Remove(del);
+            await _context.SaveChangesAsync();
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

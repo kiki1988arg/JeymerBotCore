@@ -69,6 +69,10 @@ namespace DAO
         public Task<HttpResponseMessage> Insert(RequestModel req) {
             throw new NotImplementedException();
         }
+
+        public Task<HttpResponseMessage> Delete(int id) {
+            throw new NotImplementedException();
+        }
         #endregion
 
     }

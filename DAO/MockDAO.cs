@@ -10,6 +10,10 @@ using Entities;
 namespace DAO
 {
     public class MockDao : IDAO {
+        public Task<HttpResponseMessage> Delete(int id) {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<RequestModel>> GetAllAsync() {
             List<RequestModel> moq = new List<RequestModel>();         
             var aux = new RequestModel() {

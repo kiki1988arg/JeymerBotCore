@@ -14,6 +14,11 @@ namespace BL
         public BlMock(IDAO DAO) {
             _DAO = DAO;
         }
+
+        public Task<HttpResponseMessage> Delete(int number) {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<RequestModel>> GetAll() {
             return await _DAO.GetAllAsync();
         }
