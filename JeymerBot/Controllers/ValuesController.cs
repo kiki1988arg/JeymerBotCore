@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +10,17 @@ namespace JeymerBot.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
-    {
+        {
+    
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            HttpClient client = new HttpClient();
+            Task<string> getStringTask = client.GetStringAsync("http://msdn.microsoft.com");
+          
+            return await getStringTask;
         }
 
         // GET api/values/5

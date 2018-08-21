@@ -1,0 +1,13 @@
+﻿DAO:
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+
+Comandos
+
+Dotnet ef add-migration nombre
+Update-database
+
+Una base existente.
+Scaffold-DbContext "Data Source=DESKTOP-C14ILB8\SQLEXPRESS01;Initial Catalog=Jeymer;Integrated Security=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir ./Models1 
